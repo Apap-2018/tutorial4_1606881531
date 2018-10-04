@@ -9,5 +9,13 @@
     <h3 th:text="'pilot name : ' + ${pilot.name}"></h3>
     <h3 th:text="'pilot fly hour : ' + ${pilot.flyHour}"></h3>
     <a th:href="@{|/flight/add/${pilot.licenseNumber}|}">Add Flight</a>
+    <h2><b>LIST PENERBANGAN</b></h2>
+    <th:block th:each="flight : ${flights}">
+        <h3 th:text="'Nomor penerbangan: ' + ${flight.flightNumber}"></h3>
+        <h3 th:text="'Bandara Asal: ' + ${flight.origin}"></h3>
+        <h3 th:text="'Bandara Tujuan: ' + ${flight.destination}"></h3>
+        <h3 th:text="'Tanggal Penerbangan: ' + ${flight.time}"></h3>
+        <br><br><br>
+    </th:block>
 </body>
 </html>
